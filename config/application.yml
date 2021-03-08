@@ -9,3 +9,7 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+TWILIO_ACCOUNT_SID: AC7cbb520cc9ca469c8ee56fdc0a3c3666
+TWILIO_AUTH_TOKEN: f61dd35193caf8152ec4c1b198b5d1bb
+TWILIO_PHONE_NUMBER: +15622625683

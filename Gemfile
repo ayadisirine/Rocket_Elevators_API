@@ -103,3 +103,6 @@ gem 'blazer'
 
 # Securing APIs
 gem 'figaro'
+
+# Twilio
+gem 'twilio'
