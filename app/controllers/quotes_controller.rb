@@ -33,13 +33,13 @@ class QuotesController < ApplicationController
     end
             
     def auth_callback
-      $companyName = 'DropboxTest'
+      $companyName = 'DropboxTest1'
 
-      client_id = "ax4aqcxipgidq04"
-      client_secret = "msnz2fqng37mhpc"
+      client_id = ENV['DROPBOX_ID']
+      client_secret = ENV['DROPBOX_SECRET']
 
       DropboxApi::Authenticator.new(client_id, client_secret)
-      folders = DropboxApi::Client.new('LkWY46rJ20UAAAAAAAAAARBbF1EBBPWDGnvUxv_UWzAlaFKYfKEq9E9_KfUoAEa7').create_folder "/" + $companyName + ""
+      folders = DropboxApi::Client.new(ENV['DROPBOX_TOKEN']).create_folder "/" + $companyName + ""
       redirect_to '/pages/quote'
     end
 
