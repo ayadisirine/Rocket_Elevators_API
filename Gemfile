@@ -101,5 +101,4 @@ gem 'csv'
 gem 'blazer'
 
 # Dropbox API gems
-gem 'dropbox-api', '~> 0.4.7'
-gem 'paperclip'
+gem 'dropbox_api'
