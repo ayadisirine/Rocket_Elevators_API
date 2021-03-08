@@ -42,9 +42,6 @@ Here is a screenshot of what the list of quotes looks like :
 We then deployed the website to AWS Ubuntu Server using Cloudflare to secure it.
 
 
-![](2021-02-19-20-11-28.png)
-
-
 The Backoffice was updated to include more data from Mysql as well as adding a Data Warehouse.
 
 ![](2021-02-26-17-48-58.png)
