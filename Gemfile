@@ -105,4 +105,4 @@ gem 'blazer'
 gem 'figaro'
 
 # Twilio
-gem 'twilio'
+gem 'twilio-ruby'
