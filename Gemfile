@@ -93,12 +93,19 @@ gem 'pg'
 # Multiverse
 gem 'multiverse'
 
-#data creation
+# Data Creation
 gem 'populator'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 gem 'csv'
 
+# Charts
 gem 'blazer'
+
+# Securing APIs
+gem 'figaro'
+
+# Twilio
+gem 'twilio-ruby'
 
 # Dropbox API gems
 gem 'dropbox_api'
