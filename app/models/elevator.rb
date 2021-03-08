@@ -7,7 +7,8 @@ class Elevator < ApplicationRecord
             message = "The Elevator, ID: #{self.id}, in building: #{self.column.battery.building.id}, on #{self.column.battery.building.address_building} needs maintenance"
             TwilioText.new(message).txt
         end
-    end 
+    end
+
     around_update :update_slack
 
     def update_slack
@@ -16,6 +17,5 @@ class Elevator < ApplicationRecord
             notifier = Slack::Notifier.new ENV['SLACK_WEBHOOK_URL']
             notifier.ping "The Elevator, ID: #{self.id}, SERIAL NUMBER: #{self.serial_number} changed status from : #{self.status_was} to #{self.status}"
         end
-           
     end
 end
