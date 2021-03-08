@@ -99,3 +99,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 gem 'csv'
 
 gem 'blazer'
+
+# Dropbox API gems
+gem 'dropbox-api', '~> 0.4.7'
+gem 'paperclip'
