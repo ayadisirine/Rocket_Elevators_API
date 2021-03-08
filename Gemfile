@@ -99,3 +99,5 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 gem 'csv'
 
 gem 'blazer'
+
+gem "slack-notifier"
