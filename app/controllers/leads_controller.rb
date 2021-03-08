@@ -1,8 +1,9 @@
 class LeadsController < ApplicationController
     require 'rake'
     Rails.application.load_tasks
+    
     def create
-        
+
         puts params
         leads = Lead.new
         leads.name = params[:name]

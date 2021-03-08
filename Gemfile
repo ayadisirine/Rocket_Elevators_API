@@ -102,3 +102,4 @@ gem 'blazer'
 
 # Dropbox API gems
 gem 'dropbox_api'
+gem 'activestorage-dropbox'
