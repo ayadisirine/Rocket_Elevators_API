@@ -108,5 +108,7 @@ gem 'figaro'
 gem 'twilio-ruby'
 
 # Slack
-
 gem "slack-notifier"
+
+# SendGrid 
+gem 'sendgrid-ruby'
