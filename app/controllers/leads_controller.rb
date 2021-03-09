@@ -32,7 +32,7 @@ class LeadsController < ApplicationController
     end
   
     def show
-        redirect_to '/admin/quote'
+        redirect_to '/admin/lead'
     end
 
 end
