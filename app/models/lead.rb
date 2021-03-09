@@ -1,6 +1,6 @@
 class Lead < ApplicationRecord
     mount_uploader :attachment, AttachmentUploader # Tells rails to use this uploader for this model.
-    #validates :name, presence: true  Make sure the owner's name is present
+    # validates :name, presence: true  Make sure the owner's name is present
     after_save :create_lead_ticket
 
     def create_lead_ticket
@@ -10,9 +10,9 @@ class Lead < ApplicationRecord
             config.token = ENV['ZENDESK_TOKEN']
         end
         ZendeskAPI::Ticket.create!(client, 
-            :subject => "#{self.full_name} from #{self.company_name}", 
+            :subject => "#{self.name} from #{self.company_name}", 
             :comment => { 
-                :value => "The contact #{self.full_name_of_the_contact} 
+                :value => "The contact #{self.name} 
                     from company #{self.company_name} 
                     can be reached at email  #{self.email} 
                     and at phone number #{self.phone}. 
@@ -23,7 +23,7 @@ class Lead < ApplicationRecord
                     Attached Message: #{self.message}"
             }, 
             :requester => { 
-                "name": self.full_name_of_the_contact, 
+                "name": self.name, 
                 "email": self.email 
             },
             :priority => "normal",

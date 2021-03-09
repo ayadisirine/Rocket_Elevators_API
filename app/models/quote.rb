@@ -8,16 +8,16 @@ class Quote < ApplicationRecord
           config.token = ENV['ZENDESK_TOKEN']
       end
       ZendeskAPI::Ticket.create!(client, 
-          :subject => "#{self.name}", 
+          :subject => "#{self.company_name}", 
           :comment => { 
-              :value => "The contact #{self.name} 
-                  can be reached at email #{self.email} and at phone number #{self.phone}. 
-                  Building type selected is #{self.bType} with product line #{self.product}. 
-                  Number of suggested elevator is #{self.numElev} and total price is #{self.totalP}. \n
+              :value => "The company name #{self.company_name} 
+                  can be reached at email #{self.email}. 
+                  Building type selected is #{self.building_type} with product line #{self.product_line}. 
+                  Number of suggested elevator is #{self.elevator_amount} and total price is #{self.final_price}. \n
                   For More Information, refers to Quote ##{self.id}."
           }, 
           :requester => { 
-              "name": self.name, 
+              "name": self.company_name, 
               "email": self.email         
             },
           :priority => "normal",
