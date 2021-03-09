@@ -16,7 +16,7 @@ class LeadsController < ApplicationController
         leads.attachment = params[:attachment]
         leads.save!
 
-        if leads.save
+        if leads.save!
             redirect_to '/'
             load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
             Rake::Task['warehouse:sync'].execute

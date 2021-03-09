@@ -97,8 +97,8 @@ ActiveRecord::Schema.define(version: 2021_02_26_215400) do
   end
 
   create_table "building_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "information_key" #string "construction year"
-    t.string "value" #Actual year
+    t.string "information_key"
+    t.string "value"
     t.bigint "building_id"
     t.index ["building_id"], name: "index_building_details_on_building_id"
   end
