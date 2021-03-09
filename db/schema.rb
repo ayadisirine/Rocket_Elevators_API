@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_26_215400) do
+ActiveRecord::Schema.define(version: 2021_03_09_052323) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "type_of_address"
@@ -97,8 +97,8 @@ ActiveRecord::Schema.define(version: 2021_02_26_215400) do
   end
 
   create_table "building_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "information_key" #string "construction year"
-    t.string "value" #Actual year
+    t.string "information_key"
+    t.string "value"
     t.bigint "building_id"
     t.index ["building_id"], name: "index_building_details_on_building_id"
   end
@@ -176,7 +176,7 @@ ActiveRecord::Schema.define(version: 2021_02_26_215400) do
     t.string "department"
     t.text "message"
     t.binary "attachment"
-    t.datetime "contact_request_date"
+    t.datetime "contact_request_date", default: -> { "CURRENT_TIMESTAMP" }, null: false
   end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
