@@ -1,6 +1,11 @@
 RailsAdmin.config do |config|
 
   ### Popular gems integration
+  
+
+  RailsAdmin.config do |config|
+    config.main_app_name = ["Rocket Elevators"]
+  end
 
   RailsAdmin.config do |config|
    config.authenticate_with do
@@ -15,6 +20,7 @@ RailsAdmin.config do |config|
   config.navigation_static_links = {
     'Charts' => '/blazer'
   }
+
 
 
   ## == Pundit ==
@@ -45,3 +51,5 @@ RailsAdmin.config do |config|
     # history_show
   end
 end
+
+
