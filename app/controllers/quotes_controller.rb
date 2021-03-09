@@ -1,4 +1,5 @@
 class QuotesController < ApplicationController
+  
     # skip_before_action :verify_authenticity_token
     require 'rake'
     Rails.application.load_tasks
@@ -25,8 +26,10 @@ class QuotesController < ApplicationController
       quotes.save!
       
       if quotes.save
-        load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
-        Rake::Task['warehouse:sync'].execute
+        # helpers.ticket_quote(quote_params)
+        redirect_to '/pages/quote'
+        # load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
+        # Rake::Task['warehouse:sync'].execute
       end
     end
 

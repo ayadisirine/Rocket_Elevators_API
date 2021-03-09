@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   #   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # end
   resources :leads
+  post '/leads', to: 'leads#create'
 
   get 'dropbox/auth_callback' => 'dropbox#auth_callback'
 

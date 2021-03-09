@@ -1,4 +1,5 @@
 class LeadsController < ApplicationController
+    
     require 'rake'
     Rails.application.load_tasks
     
@@ -22,17 +23,20 @@ class LeadsController < ApplicationController
         $company_name = leads.company_name
 
         leads.save!
+        
 
         if leads.save
             if x == nil
-                puts "HELLO!"
-                load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
-                Rake::Task['warehouse:sync'].execute
+                # helpers.ticket_lead(lead_params)
+                redirect_to '/'
+                # load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
+                # Rake::Task['warehouse:sync'].execute
             else
                 redirect_to '/dropbox/auth_callback'
-                load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
-                Rake::Task['warehouse:sync'].execute
-                redirect_to '/#contact'
+                # helpers.ticket_lead(lead_params)
+                redirect_to '/'
+                # load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
+                # Rake::Task['warehouse:sync'].execute
             end
         end
     end
