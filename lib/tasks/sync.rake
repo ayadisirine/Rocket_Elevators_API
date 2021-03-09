@@ -4,7 +4,7 @@ namespace :warehouse do
     desc "Sync to data warehouse"
     task sync: :environment  do |t, args|
 
-        dwh = PG::Connection.new(host:'localhost', port:'5432', dbname:'rocketelevators_dwh', user:'postgres', password:'postgres')
+        dwh = PG::Connection.new(host:'localhost', port:'5432', dbname:'rocketelevators_dwh', user:'postgres', password:'ines2010')
 
         dwh.exec("TRUNCATE fact_quotes")
         dwh.prepare('to_fact_quotes', "INSERT INTO fact_quotes (quote_id, creation_date, company_name, email, nb_elevator, created_at, updated_at) VALUES ($1, $2, $3, $4, $5, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)")
