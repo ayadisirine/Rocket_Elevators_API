@@ -22,25 +22,12 @@ class QuotesController < ApplicationController
       quotes.company_name = params[:company_name]
       quotes.email = params[:email]
       # quotes.assign_attributes(quotes_params)
-      $companyName = quotes.company_name
       quotes.save!
       
       if quotes.save
-        redirect_to '/dropbox/auth_callback'
         load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
         Rake::Task['warehouse:sync'].execute
       end
-    end
-            
-    def auth_callback
-      $companyName = 'DropboxTest1'
-
-      client_id = ENV['DROPBOX_ID']
-      client_secret = ENV['DROPBOX_SECRET']
-
-      DropboxApi::Authenticator.new(client_id, client_secret)
-      folders = DropboxApi::Client.new(ENV['DROPBOX_TOKEN']).create_folder "/" + $companyName + ""
-      redirect_to '/pages/quote'
     end
 
     def quotes_

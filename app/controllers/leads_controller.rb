@@ -4,6 +4,7 @@ class LeadsController < ApplicationController
     
     def create
 
+        puts 'Hello!'
         puts params
         leads = Lead.new
         leads.name = params[:name]
@@ -17,12 +18,13 @@ class LeadsController < ApplicationController
         leads.attachment = params[:attachment]
         leads.save!
 
+        $company_name = leads.company_name
+
         if leads.save
-            redirect_to '/'
+            redirect_to '/dropbox/auth_callback'
             load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
             Rake::Task['warehouse:sync'].execute
         end
-
     end
 
     def leads_

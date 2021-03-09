@@ -16,8 +16,7 @@ Rails.application.routes.draw do
   # end
   resources :leads
 
-  get 'dropbox/auth' => 'quotes#auth'
-  get 'dropbox/auth_callback' => 'quotes#auth_callback'
+  get 'dropbox/auth_callback' => 'dropbox#auth_callback'
 
 end
 
