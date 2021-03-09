@@ -4,6 +4,7 @@ class DropboxController < ApplicationController
         client_id = ENV['DROPBOX_ID']
         client_secret = ENV['DROPBOX_SECRET']
 
+        company_name = $company_name.to_s
         path = "/" + $company_name + ""
         file = IO.read File.join(Rails.root, 'public', $attachment.to_s)
 
@@ -18,8 +19,12 @@ class DropboxController < ApplicationController
         rescue DropboxApi::Errors::NotFoundError
             client.create_folder path
             client.upload new_path2, file
+
+            ActiveRecord::Base.connection.exec_query("UPDATE leads SET attachment = NULL WHERE company_name = '#{company_name}'")
         else
             client.upload new_path2, file
+
+            ActiveRecord::Base.connection.exec_query("UPDATE leads SET attachment = NULL WHERE company_name = '#{company_name}'")
         end
 
         redirect_to '/#contact'

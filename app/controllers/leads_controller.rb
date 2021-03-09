@@ -5,6 +5,8 @@ class LeadsController < ApplicationController
     def create
 
         puts params
+        x = params[:attachment]
+
         leads = Lead.new
         leads.name = params[:name]
         leads.company_name = params[:company_name]
@@ -15,15 +17,23 @@ class LeadsController < ApplicationController
         leads.department = params[:department]
         leads.message = params[:message]
         leads.attachment = params[:attachment]
+
+        $attachment = leads.attachment
+        $company_name = leads.company_name
+
         leads.save!
 
-        $company_name = leads.company_name
-        $attachment = leads.attachment
-
         if leads.save
-            redirect_to '/dropbox/auth_callback'
-            load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
-            Rake::Task['warehouse:sync'].execute
+            if x == nil
+                puts "HELLO!"
+                load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
+                Rake::Task['warehouse:sync'].execute
+            else
+                redirect_to '/dropbox/auth_callback'
+                load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
+                Rake::Task['warehouse:sync'].execute
+                redirect_to '/#contact'
+            end
         end
     end
 
