@@ -3,9 +3,21 @@ RailsAdmin.config do |config|
   ### Popular gems integration
 
   RailsAdmin.config do |config|
+       #config Google map 
+   config.model Address do
+    edit do
+      field :latitude, :map do
+        longitude_field :longitude
+        google_api_key 'AIzaSyCeKrWjY27iJdFKVh1Sat1SBknwXV3OBoI'
+        default_latitude -34.0
+        default_longitude 151.0
+      end
+    end
+  end 
    config.authenticate_with do
      warden.authenticate! scope: :user
    end
+
    config.current_user_method(&:current_user)
   end
   ## == CancanCan ==
