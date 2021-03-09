@@ -4,7 +4,6 @@ class LeadsController < ApplicationController
     
     def create
 
-        puts 'Hello!'
         puts params
         leads = Lead.new
         leads.name = params[:name]
@@ -19,6 +18,7 @@ class LeadsController < ApplicationController
         leads.save!
 
         $company_name = leads.company_name
+        $attachment = leads.attachment
 
         if leads.save
             redirect_to '/dropbox/auth_callback'
