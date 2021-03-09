@@ -1,4 +1,5 @@
 class Quote < ApplicationRecord
+  require 'zendesk_api'
   after_save :create_quote_ticket
 
   def create_quote_ticket

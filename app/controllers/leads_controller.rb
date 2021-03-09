@@ -21,8 +21,8 @@ class LeadsController < ApplicationController
         if leads.save!
             # helpers.ticket_lead(lead_params)
             redirect_to '/'
-            load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
-            Rake::Task['warehouse:sync'].execute
+            # load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
+            # Rake::Task['warehouse:sync'].execute
         end
 
     end

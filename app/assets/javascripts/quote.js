@@ -199,12 +199,19 @@ function calculUpdate() {
 
 function sendQuote() {
     $("#send-quote").on("click", function() {
-        //console.log("hello marie");
-        alert("Your message was sent succesfully. Thank you. We will return to you shorly.");
-        $('#apartment_qty').removeAttr('required');
-        $('#floor_qty').removeAttr('required');
-        $('#basement_qty').removeAttr('required');
-        //createQuotes();
-        });
+        let companyName = $('#company').val();
+        let email = $('#email').val();
+
+        if (companyName == "" || email == ""){
+            alert("Please fill all mandatory (*) fields before sending your quote.");
+        } else {
+
+            alert("Your message was sent succesfully. Thank you. We will return to you shorly.");
+            $('#apartment_qty').removeAttr('required');
+            $('#floor_qty').removeAttr('required');
+            $('#basement_qty').removeAttr('required');
+        }
+
+    });
     
 };

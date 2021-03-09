@@ -20,12 +20,10 @@ $(document).ready(function() {
 		var $message = $("#message").val();
 		console.log($message);
 		if ($name == "" || $email == "" || $phone == "" || $companyName == "" || $projectName == "" || 
-		$projectDescription == "" || $message == "") {
+		$projectDescription == "") {
 			alert("Please fill all mandatory (*) fields before sending your message.");
 		} else {
 			alert("Your message was sent succesfully. Thank you. We will return to you shorly.");
-			// $("#name, #email, #phone, #company_name, #project_name, #project_description, #department, #message").val("");
 		}
-		
 	});
 })
