@@ -112,3 +112,4 @@ gem "slack-notifier"
 
 # SendGrid 
 gem 'sendgrid-ruby'
+gem 'zendesk_api'
