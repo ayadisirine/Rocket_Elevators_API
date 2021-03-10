@@ -1,11 +1,24 @@
+require Rails.root.join('lib','rails_admin','map.rb')
 RailsAdmin.config do |config|
 
   ### Popular gems integration
 
   RailsAdmin.config do |config|
+       #config Google map 
+   config.model Address do
+    edit do
+      field :latitude, :map do
+        longitude_field :longitude
+        google_api_key 'AIzaSyCeKrWjY27iJdFKVh1Sat1SBknwXV3OBoI'
+        default_latitude -104.984853
+        default_longitude -104.984853
+      end
+    end
+  end 
    config.authenticate_with do
      warden.authenticate! scope: :user
    end
+
    config.current_user_method(&:current_user)
   end
   ## == CancanCan ==
@@ -38,7 +51,8 @@ RailsAdmin.config do |config|
     show
     edit
     delete
-    show_in_app
+    show_in_app 
+    map
 
     ## With an audit adapter, you can add:
     # history_index
