@@ -109,6 +109,10 @@ gem 'figaro'
 # Twilio
 gem 'twilio-ruby'
 
+# Dropbox API gems
+gem 'dropbox_api'
+gem 'activestorage-dropbox'
+
 # Slack
 gem "slack-notifier"
 
