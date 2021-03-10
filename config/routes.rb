@@ -17,5 +17,7 @@ Rails.application.routes.draw do
   resources :leads
   post '/leads', to: 'leads#create'
 
+  
+
 end
 

@@ -121,3 +121,6 @@ gem 'whenever', require: false
 
 #Rails_Admin Theme
 gem 'rails_admin_rollincode', '~> 1.0'
+
+#Watson
+gem 'ibm_watson'

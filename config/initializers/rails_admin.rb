@@ -1,8 +1,8 @@
 require Rails.root.join('lib','rails_admin','map.rb')
+require Rails.root.join('lib', 'rails_admin', 'watson.rb')
 RailsAdmin.config do |config|
 
   ### Popular gems integration
-  
 
   RailsAdmin.config do |config|
     config.main_app_name = ["Rocket Elevators"]
@@ -59,6 +59,7 @@ RailsAdmin.config do |config|
     delete
     show_in_app 
     map
+    watson
 
     ## With an audit adapter, you can add:
     # history_index
