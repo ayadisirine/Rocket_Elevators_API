@@ -1,3 +1,4 @@
+require Rails.root.join('lib','rails_admin','map.rb')
 RailsAdmin.config do |config|
 
   ### Popular gems integration
@@ -9,8 +10,8 @@ RailsAdmin.config do |config|
       field :latitude, :map do
         longitude_field :longitude
         google_api_key 'AIzaSyCeKrWjY27iJdFKVh1Sat1SBknwXV3OBoI'
-        default_latitude -34.0
-        default_longitude 151.0
+        default_latitude -104.984853
+        default_longitude -104.984853
       end
     end
   end 
@@ -50,7 +51,8 @@ RailsAdmin.config do |config|
     show
     edit
     delete
-    show_in_app
+    show_in_app 
+    map
 
     ## With an audit adapter, you can add:
     # history_index
