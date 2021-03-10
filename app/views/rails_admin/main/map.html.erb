@@ -12,6 +12,16 @@
 
     <% Building.all.each do |building| %>
         var f=0, x=0, y=0, z=0;
+        var geocoder = new google.maps.Geocoder();
+/*        var address = building.address_building;
+        geocoder.geocode( { 'address': address}, function(results, status) {
+
+        if (status == google.maps.GeocoderStatus.OK) {
+            var lat = results[0].geometry.location.lat();
+            var long = results[0].geometry.location.lat();
+            console.log(latitude);
+            } 
+        });*/
         locations.push(<%= raw(building.address_building.to_json) %>);
         names.push(<%= raw(building.customer.to_json) %>);
         tech_names.push(<%= raw(building.to_json) %>)
