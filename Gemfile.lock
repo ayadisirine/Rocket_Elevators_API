@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/beyondthestory/rails_admin_map_field.git
+  revision: abf774bda26f7a264a3b0bad2b98990514b60b16
+  specs:
+    rails_admin_map_field (0.0.1)
+      rails (>= 3.0.0)
+
+GIT
   remote: https://github.com/faker-ruby/faker.git
   revision: 677ac8fd96213a188a5512cf3aa78c89f1fcda91
   branch: master
@@ -147,12 +154,14 @@ GEM
       ruby2_keywords
     faraday-net_http (1.0.1)
     ffi (1.15.0)
+    ffi (1.15.0-x64-mingw32)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
     font-awesome-rails (4.7.0.7)
       railties (>= 3.2, < 7)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    gmaps4rails (2.1.2)
     haml (5.2.1)
       temple (>= 0.8.0)
       tilt
@@ -210,11 +219,14 @@ GEM
       activesupport (>= 4.2)
       railties (>= 4.2)
     mysql2 (0.5.3)
+    mysql2 (0.5.3-x64-mingw32)
     nested_form (0.3.2)
     net-scp (3.0.0)
       net-ssh (>= 2.6.5, < 7.0.0)
     net-ssh (6.1.0)
     nio4r (2.5.7)
+    nokogiri (1.11.1-x64-mingw32)
+      racc (~> 1.4)
     nokogiri (1.11.1-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.11.1-x86_64-linux)
@@ -227,6 +239,7 @@ GEM
       rack (>= 1.2, < 3)
     orm_adapter (0.5.0)
     pg (1.2.3)
+    pg (1.2.3-x64-mingw32)
     popper_js (1.16.0)
     populator (1.0.0)
     public_suffix (4.0.6)
@@ -305,6 +318,8 @@ GEM
       tilt (>= 1.1, < 3)
     sassc (2.4.0)
       ffi (~> 1.9)
+    sassc (2.4.0-x64-mingw32)
+      ffi (~> 1.9)
     sassc-rails (2.1.2)
       railties (>= 4.0.0)
       sassc (>= 2.0)
@@ -344,6 +359,8 @@ GEM
       nokogiri (>= 1.6, < 2.0)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2021.1)
+      tzinfo (>= 1.0.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     warden (1.2.9)
@@ -368,6 +385,7 @@ GEM
       multipart-post (~> 2.0)
 
 PLATFORMS
+  x64-mingw32
   x86_64-darwin-20
   x86_64-linux
 
@@ -394,6 +412,7 @@ DEPENDENCIES
   faker!
   figaro
   font-awesome-rails
+  gmaps4rails
   jbuilder (~> 2.5)
   jquery-rails
   jquery-ui-rails
@@ -406,6 +425,7 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 5.2.4, >= 5.2.4.5)
   rails_admin (~> 2.0)
+  rails_admin_map_field!
   rvm1-capistrano3
   sass-rails (~> 5.0)
   selenium-webdriver

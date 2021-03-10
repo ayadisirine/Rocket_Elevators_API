@@ -1,8 +1,5 @@
 class LeadsController < ApplicationController
     
-    require 'rake'
-    Rails.application.load_tasks
-    
     def create
 
         puts params
@@ -26,16 +23,11 @@ class LeadsController < ApplicationController
         
 
         if leads.save
+
             if x == nil
-                # helpers.ticket_lead(lead_params)
                 redirect_to '/'
-                # load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
-                # Rake::Task['warehouse:sync'].execute
             else
                 redirect_to '/dropbox/auth_callback'
-                # helpers.ticket_lead(lead_params)
-                # load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
-                # Rake::Task['warehouse:sync'].execute
             end
         end
     end

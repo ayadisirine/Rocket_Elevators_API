@@ -41,7 +41,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-
+#Adding Gmaps for rails 
+gem 'gmaps4rails'
 # Fur user authentication
 gem 'devise'
 
@@ -77,7 +78,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Admin for Authentification 
  gem 'rails_admin', '~> 2.0'
-
+# Google map for Admin
+gem "rails_admin_map_field", :git => "https://github.com/beyondthestory/rails_admin_map_field.git"
 # Authorization
 gem "cancancan"
 

@@ -11,9 +11,8 @@ class Quote < ApplicationRecord
       ZendeskAPI::Ticket.create!(client, 
           :subject => "#{self.company_name}", 
           :comment => { 
-              :value => "The company name #{self.company_name} 
-                  can be reached at email #{self.email}. 
-                  Building type selected is #{self.building_type} with product line #{self.product_line}. 
+              :value => "#{self.company_name} can be reached at email #{self.email}. 
+                  The chosen building type is #{self.building_type} with product line #{self.product_line}. 
                   Number of suggested elevator is #{self.elevator_amount} and total price is #{self.final_price}. \n
                   For More Information, refers to Quote ##{self.id}."
           }, 
