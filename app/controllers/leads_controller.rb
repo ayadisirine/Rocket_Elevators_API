@@ -34,7 +34,6 @@ class LeadsController < ApplicationController
             else
                 redirect_to '/dropbox/auth_callback'
                 # helpers.ticket_lead(lead_params)
-                redirect_to '/'
                 # load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
                 # Rake::Task['warehouse:sync'].execute
             end
