@@ -82,6 +82,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "rails_admin_map_field", :git => "https://github.com/beyondthestory/rails_admin_map_field.git"
 # Authorization
 gem "cancancan"
+gem "figaro"
 
 
 #upload files

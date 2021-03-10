@@ -2,14 +2,6 @@
 <div id="map" style="width: 500px; height: 400px;"></div>
 <div class="testing"></div>
 <script type="text/javascript">
-    //daclare parameters
-    locations = [];
-    floors = [];
-    names = [];
-    nb_batteries = [];
-    nb_columns = [];
-    nb_elevators = [];
-    tech_names = [];
     //Draw map with center on USA 
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 4,
@@ -18,7 +10,7 @@
     });
     //Declare infowindow to show when click on marker 
     var infowindow = new google.maps.InfoWindow();
-    var marker, i;
+    var marker, i=0;
     //Loop on Building list 
     //Building refers to app/controllers/buildings_controllers.rb
     <% Building.all.each do |building| %>
@@ -27,24 +19,9 @@
         var geocoder = new google.maps.Geocoder();    
         //get address value 
         var address = <%= raw(building.address_building.to_json) %>;
-        //convert address to longitude and latitude value using Google API  Geocode 
-        geocoder.geocode( { 'address': address}, function(results, status) {
-            //check if the operation is well done 
-            if (status == google.maps.GeocoderStatus.OK) {
-                //get lattitude value 
-                var lat = results[0].geometry.location.lat();
-                //get longitude value 
-                var long = results[0].geometry.location.lng();
-                //fill locations array
-                locations.push([lat,long]);
-                //console.log(locations.length);
-                }
-        });
-        //console.log(locations.length);
-        //client name 
-        names.push(<%= raw(building.customer.to_json) %>);
+
         //full name of technical contact 
-        tech_names.push(<%= raw(building.to_json) %>)
+        //tech_name = building.
         //compute floors, batteries, columns and elevators for each building 
         x = x + <%= building.batteries.count %>;
         //Loop to get each battery in the current building 
@@ -59,14 +36,51 @@
                 z = z + <%= column.elevators.count %>;
             <% end %>
         <% end %>
-        //Update numbre of floors, batteries, columns, elevators tables by push command
-        floors.push(f);
-        nb_batteries.push(x);
-        nb_columns.push(y);
-        nb_elevators.push(z);
-        
+
+
+        //convert address to longitude and latitude value using Google API  Geocode and draw markers 
+
+        resGecode =  geocoder.geocode( { 'address': address}, function(results, status) {
+            //check if the operation is well done 
+            if (status == google.maps.GeocoderStatus.OK) {
+                //get lattitude value 
+                var lat = results[0].geometry.location.lat();
+                //get longitude value 
+                var long = results[0].geometry.location.lng();
+                marker = new google.maps.Marker({
+                //set position Lat=locations[i][0] and Long=Locations[i][1]    
+                position: new google.maps.LatLng(lat, long),
+                map: map
+                });
+                //Add a listner if click on a marker => Show window 
+                google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+                    //show building details 
+                    infowindow.setContent('<b>' + address + '</b>' 
+//                    + '<br>' + building.customer.to_json
+                    + '<br> <br>' + 'floors: ' + f
+                    + '<br>' + 'batteries: ' + x
+                    + '<br>' + 'columns: ' + y
+                    + '<br>' + 'elevators: ' + z
+          /*          + '<br>' + 'technical contact: ' + tech_names[i].tech_full_name */); 
+                    infowindow.open(map, marker);
+                }
+                })(marker, i));
+            }
+        });
+        i=i+1;
+
+
+
+
+
     <% end %>
-    //Check the locations content 
+
+//The below section was commented becaus asynchronus call of gecode method 
+//The locations array is correctly filled in the gecode method 
+
+
+/*    //Check the locations content 
     //the array is full 
     console.log(locations);
     //but the length is 0 !!!!
@@ -95,4 +109,5 @@
         }
         })(marker, i));
     }
+    */
 </script>
