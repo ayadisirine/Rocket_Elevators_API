@@ -32,7 +32,7 @@ class Lead < ApplicationRecord
 
     def sendgrid
         mail = Mail.new
-        mail.from = Email.new(email: 'rocket.elevators@yahoo.com')
+        mail.from = Email.new(email: 'rocket.elevators@hotmail.com')
         custom = Personalization.new
         custom.add_to(Email.new(email: self.email))
         custom.add_dynamic_template_data({
