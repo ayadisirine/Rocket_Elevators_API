@@ -19,9 +19,10 @@
         var geocoder = new google.maps.Geocoder();    
         //get address value 
         var address = <%= raw(building.address_building.to_json) %>;
-
-        //full name of technical contact 
-        //tech_name = building.
+        //get customer name 
+        var customer = <%= raw(building.customer.company_name.to_json) %>;
+        //get name of technical contact 
+        tech_name = <%= raw(building.full_name_administrator.to_json) %>;
         //compute floors, batteries, columns and elevators for each building 
         x = x + <%= building.batteries.count %>;
         //Loop to get each battery in the current building 
@@ -57,57 +58,18 @@
                 return function() {
                     //show building details 
                     infowindow.setContent('<b>' + address + '</b>' 
-//                    + '<br>' + building.customer.to_json
+                    + '<br>' + 'customer:' + customer 
                     + '<br> <br>' + 'floors: ' + f
                     + '<br>' + 'batteries: ' + x
                     + '<br>' + 'columns: ' + y
                     + '<br>' + 'elevators: ' + z
-          /*          + '<br>' + 'technical contact: ' + tech_names[i].tech_full_name */); 
+                    + '<br>' + 'technical contact: ' + tech_name); 
                     infowindow.open(map, marker);
                 }
                 })(marker, i));
             }
         });
+        //increment i associated to the markers
         i=i+1;
-
-
-
-
-
     <% end %>
-
-//The below section was commented becaus asynchronus call of gecode method 
-//The locations array is correctly filled in the gecode method 
-
-
-/*    //Check the locations content 
-    //the array is full 
-    console.log(locations);
-    //but the length is 0 !!!!
-    console.log(locations.length);
-
-    //Adding markers to the map 
-    for (i = 0; i < locations.length; i++) { 
-        console.log("add marker"); 
-        marker = new google.maps.Marker({
-        //set position Lat=locations[i][0] and Long=Locations[i][1]    
-        position: new google.maps.LatLng(locations[i][0], locations[i][1]),
-        map: map
-        });
-        //Add a listner if click on a marker => Show window 
-        google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-            //show building details 
-            infowindow.setContent('<b>' + locations[i].number_n_street + '</b>' 
-            + '<br>' + names[i].company_name
-            + '<br> <br>' + 'floors: ' + floors[i]
-            + '<br>' + 'batteries: ' + nb_batteries[i]
-            + '<br>' + 'columns: ' + nb_columns[i]
-            + '<br>' + 'elevators: ' + nb_elevators[i]
-            + '<br>' + 'technical contact: ' + tech_names[i].tech_full_name);
-            infowindow.open(map, marker);
-        }
-        })(marker, i));
-    }
-    */
 </script>
