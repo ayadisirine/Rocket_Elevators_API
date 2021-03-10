@@ -14,7 +14,7 @@ RailsAdmin.config do |config|
     edit do
       field :latitude, :map do
         longitude_field :longitude
-        google_api_key 'AIzaSyCeKrWjY27iJdFKVh1Sat1SBknwXV3OBoI'
+        google_api_key ENV['GOOGLE_MAPS']
         default_latitude -104.984853
         default_longitude -104.984853
       end

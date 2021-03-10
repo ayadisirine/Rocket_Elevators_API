@@ -1,4 +1,5 @@
 class QuotesController < ApplicationController
+    require 'zendesk_api'
 
     def create
         
@@ -23,8 +24,32 @@ class QuotesController < ApplicationController
       quotes.save!
       
       if quotes.save
+        create_quote_ticket()
         redirect_to '/pages/quote'
       end
+    end
+
+    def create_quote_ticket
+      client = ZendeskAPI::Client.new do |config|
+          config.url = ENV['ZENDESK_URL']
+          config.username = ENV['ZENDESK_USERNAME']
+          config.token = ENV['ZENDESK_TOKEN']
+      end
+      ZendeskAPI::Ticket.create!(client, 
+          :subject => "#{params[:company_name]}", 
+          :comment => { 
+              :value => "#{params[:company_name]} can be reached at email #{params[:email]}. 
+                  The chosen building type is #{params[:building_type]} with product line #{params[:product_line]}. 
+                  Number of suggested elevator is #{params[:elevator_amount]} and total price is #{params[:final_price]}. \n
+                  For More Information, refers to Quote ##{params[:id]}."
+          }, 
+          :requester => { 
+              "name": params[:company_name], 
+              "email": params[:email]         
+            },
+          :priority => "normal",
+          :type => "task"
+        )
     end
 
     def quotes_
