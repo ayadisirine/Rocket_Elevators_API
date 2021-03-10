@@ -23,7 +23,6 @@ class LeadsController < ApplicationController
         
 
         if leads.save
-
             if x == nil
                 redirect_to '/'
             else
