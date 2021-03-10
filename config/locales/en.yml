@@ -35,6 +35,10 @@ en:
         menu: "Map"
         title: "Map"
         breadcrumb: "Map"
+      watson:
+        menu: "Watson"
+        title: "Watson"
+        breadcrumb: "Watson"
   faker:
     name:
       battery_type:
