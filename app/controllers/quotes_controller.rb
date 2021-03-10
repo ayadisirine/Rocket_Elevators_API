@@ -1,7 +1,5 @@
 class QuotesController < ApplicationController
-    # skip_before_action :verify_authenticity_token
-    require 'rake'
-    Rails.application.load_tasks
+
     def create
         
       puts params
@@ -26,10 +24,7 @@ class QuotesController < ApplicationController
       
       if quotes.save
         redirect_to '/pages/quote'
-        load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
-        Rake::Task['warehouse:sync'].execute
       end
-      
     end
 
     def quotes_

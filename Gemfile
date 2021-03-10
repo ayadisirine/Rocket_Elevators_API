@@ -114,3 +114,7 @@ gem "slack-notifier"
 
 # SendGrid 
 gem 'sendgrid-ruby'
+gem 'zendesk_api'
+
+# Cron Job
+gem 'whenever', require: false

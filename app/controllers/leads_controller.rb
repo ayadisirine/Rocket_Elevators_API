@@ -1,6 +1,5 @@
 class LeadsController < ApplicationController
-    require 'rake'
-    Rails.application.load_tasks
+    
     def create
         
         puts params
@@ -15,11 +14,10 @@ class LeadsController < ApplicationController
         leads.message = params[:message]
         leads.attachment = params[:attachment]
         leads.save!
+        
 
         if leads.save
             redirect_to '/'
-            load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
-            Rake::Task['warehouse:sync'].execute
         end
 
     end
