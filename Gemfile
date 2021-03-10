@@ -115,4 +115,8 @@ gem 'sendgrid-ruby'
 gem 'zendesk_api'
 
 # Cron Job
+<<<<<<< HEAD
 gem 'whenever', require: false
+=======
+gem 'whenever', require: false
+>>>>>>> main
