@@ -4,7 +4,7 @@ class Lead < ApplicationRecord
     mount_uploader :attachment, AttachmentUploader # Tells rails to use this uploader for this model.
     require 'sendgrid-ruby'
     include SendGrid
-    after_save :create_lead_ticket, :sendgrid
+    after_create :create_lead_ticket, :sendgrid
 
     def create_lead_ticket
         client = ZendeskAPI::Client.new do |config|
@@ -20,7 +20,8 @@ class Lead < ApplicationRecord
                     \n\n
                     Project Description
                     #{self.project_description}\n\n
-                    Attached Message: #{self.message}"
+                    Attached Message: #{self.message}\n\n
+                    The Contact uploaded an attachment"
             }, 
             :requester => { 
                 "name": self.name, 

@@ -1,11 +1,5 @@
 class LeadsController < ApplicationController
     
-    require 'rake'
-    Rails.application.load_tasks
-    
-    # require 'sendgrid-ruby'
-    # include SendGrid
-
     def create
         
         puts params
