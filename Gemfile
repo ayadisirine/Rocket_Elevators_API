@@ -111,6 +111,8 @@ gem 'twilio-ruby'
 gem "slack-notifier"
 
 # SendGrid 
-gem 'sendgrid-ruby' 
-#zendesk
+gem 'sendgrid-ruby'
 gem 'zendesk_api'
+
+# Cron Job
+gem 'whenever', require: false

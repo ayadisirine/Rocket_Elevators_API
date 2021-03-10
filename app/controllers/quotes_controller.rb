@@ -28,8 +28,8 @@ class QuotesController < ApplicationController
       if quotes.save
         # helpers.ticket_quote(quote_params)
         redirect_to '/pages/quote'
-        load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
-        Rake::Task['warehouse:sync'].execute
+        # load File.join(Rails.root, 'lib', 'tasks', 'sync.rake')
+        # Rake::Task['warehouse:sync'].execute
       end
       
     end
