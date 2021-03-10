@@ -1,6 +1,9 @@
 class Lead < ApplicationRecord
+    require 'sendgrid-ruby'
+    include SendGrid
     mount_uploader :attachment, AttachmentUploader # Tells rails to use this uploader for this model.
     # validates :name, presence: true  Make sure the owner's name is present
+    require 'zendesk_api'
     after_save :create_lead_ticket
 
     def create_lead_ticket

@@ -111,5 +111,6 @@ gem 'twilio-ruby'
 gem "slack-notifier"
 
 # SendGrid 
-gem 'sendgrid-ruby'
+gem 'sendgrid-ruby' 
+#zendesk
 gem 'zendesk_api'
