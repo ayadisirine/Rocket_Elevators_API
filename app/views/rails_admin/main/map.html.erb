@@ -34,11 +34,13 @@
                 //get lattitude value 
                 var lat = results[0].geometry.location.lat();
                 //get longitude value 
-                var long = results[0].geometry.location.lat();
+                var long = results[0].geometry.location.lng();
                 //fill locations array
                 locations.push([lat,long]);
+                //console.log(locations.length);
                 }
         });
+        //console.log(locations.length);
         //client name 
         names.push(<%= raw(building.customer.to_json) %>);
         //full name of technical contact 
