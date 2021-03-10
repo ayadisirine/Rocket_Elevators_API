@@ -6,7 +6,7 @@ $(document).ready(function() {
 		var $name = $("#name").val();
 		console.log($name);
 		var $email = $("#email").val();
-		let emailPat = $email.checkValidity();
+		// let emailPat = $email.checkValidity();
 		console.log($email);
 		var $phone = $("#phone").val();
 		console.log($phone);
@@ -21,8 +21,8 @@ $(document).ready(function() {
 		var $message = $("#message").val();
 		console.log($message);
 		if ($name == "" || $email == "" || $phone == "" || $companyName == "" || $projectName == "" || 
-		$projectDescription == "" || emailPat == false) {
-			// alert("Please fill all mandatory (*) fields before sending your message.");
+		$projectDescription == "") {
+			alert("Please fill all mandatory (*) fields before sending your message.");
 		} else {
 			alert("Your message was sent succesfully. Thank you. We will return to you shorly.");
 		}
