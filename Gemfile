@@ -78,10 +78,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Admin for Authentification 
  gem 'rails_admin', '~> 2.0'
+ 
 # Google map for Admin
 gem "rails_admin_map_field", :git => "https://github.com/beyondthestory/rails_admin_map_field.git"
 # Authorization
 gem "cancancan"
+
 
 
 #upload files
@@ -108,6 +110,10 @@ gem 'figaro'
 
 # Twilio
 gem 'twilio-ruby'
+
+# Dropbox API gems
+gem 'dropbox_api'
+gem 'activestorage-dropbox'
 
 # Slack
 gem "slack-notifier"
