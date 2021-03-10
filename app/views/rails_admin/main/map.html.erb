@@ -1,5 +1,4 @@
-
-<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+<script src="//maps.google.com/maps/api/js?key=AIzaSyCeKrWjY27iJdFKVh1Sat1SBknwXV3OBoI"></script>  
 <div id="map" style="width: 500px; height: 400px;"></div>
 <div class="testing"></div>
 <script type="text/javascript">
@@ -10,16 +9,17 @@
     nb_columns = [];
     nb_elevators = [];
     tech_names = [];
+
     <% Building.all.each do |building| %>
         var f=0, x=0, y=0, z=0;
-        locations.push(<%= raw(building.address.to_json) %>);
+        locations.push(<%= raw(building.address_building.to_json) %>);
         names.push(<%= raw(building.customer.to_json) %>);
         tech_names.push(<%= raw(building.to_json) %>)
         x = x + <%= building.batteries.count %>;
         <% building.batteries.all.each do |battery| %>
             y = y + <%= battery.columns.count %>;
             <% battery.columns.all.each do |column| %>
-                f = f + <%= column.number_floors %>;
+                f = f + <%= column.number_of_floors_served %>;
                 z = z + <%= column.elevators.count %>;
             <% end %>
         <% end %>
@@ -27,6 +27,7 @@
         nb_batteries.push(x);
         nb_columns.push(y);
         nb_elevators.push(z);
+        console.log(locations);
     <% end %>
     
     
