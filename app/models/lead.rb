@@ -18,7 +18,8 @@ class Lead < ApplicationRecord
                     \n\n
                     Project Description
                     #{self.project_description}\n\n
-                    Attached Message: #{self.message}"
+                    Attached Message: #{self.message}\n\n
+                    The Contact uploaded an attachment"
             }, 
             :requester => { 
                 "name": self.name, 
