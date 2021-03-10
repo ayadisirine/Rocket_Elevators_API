@@ -1,6 +1,6 @@
 class Quote < ApplicationRecord
   require 'zendesk_api'
-  after_create :create_quote_ticket
+  # after_create :create_quote_ticket
 
   def create_quote_ticket
       client = ZendeskAPI::Client.new do |config|
