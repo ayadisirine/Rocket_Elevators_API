@@ -142,14 +142,11 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-<<<<<<< HEAD
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-=======
     dropbox_api (0.1.19)
       faraday (~> 1.0)
       oauth2 (~> 1.1)
->>>>>>> main
     errbase (0.2.1)
     erubi (1.10.0)
     eventmachine (1.2.7)
