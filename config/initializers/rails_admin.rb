@@ -10,7 +10,7 @@ RailsAdmin.config do |config|
 
   RailsAdmin.config do |config|
        #config Google map 
-   config.model Address do
+    config.model Address do
       edit do
         field :latitude, :map do
           longitude_field :longitude
@@ -21,9 +21,10 @@ RailsAdmin.config do |config|
       end
     end
   end
-   config.authenticate_with do
-     warden.authenticate! scope: :user
-   end
+
+  config.authenticate_with do
+    warden.authenticate! scope: :user
+  end
 
   config.current_user_method(&:current_user)
   
