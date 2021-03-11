@@ -11,21 +11,22 @@ RailsAdmin.config do |config|
   RailsAdmin.config do |config|
        #config Google map 
    config.model Address do
-    edit do
-      field :latitude, :map do
-        longitude_field :longitude
-        google_api_key ENV['GOOGLE_MAPS']
-        default_latitude -104.984853
-        default_longitude -104.984853
+      edit do
+        field :latitude, :map do
+          longitude_field :longitude
+          google_api_key ENV['GOOGLE_MAPS']
+          default_latitude -104.984853
+          default_longitude -104.984853
+        end
       end
     end
-  end 
+  end
    config.authenticate_with do
      warden.authenticate! scope: :user
    end
 
-   config.current_user_method(&:current_user)
-  end
+  config.current_user_method(&:current_user)
+  
   ## == CancanCan ==
   config.authorize_with :cancancan
 
