@@ -39,49 +39,17 @@
     var infowindow = new google.maps.InfoWindow();
     var marker, i;
     let n = 0;
-    var selectLoc = locations.slice(0, 10);
+    var selectLoc = locations.slice(10, 10);
 
     console.log('First address Reference: ' + locations[0]);
-    // console.log(selectLoc)
+    console.log(selectLoc)
 
     
     //--------------------- TESTING -------------------
-    while (n < 10) {
-        
-    geocoder.geocode({ address: String(locations[n]) }, (results, status) => {
-        
-        console.log('Addresses After Geocode: ' + locations[n]);
-                
-        if (status === "OK") {
-            maps.setCenter(results[0].geometry.location);
-            marker = new google.maps.Marker({
-                map: maps,
-                position: results[0].geometry.location,
-                });
-                google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                    return function() {
-                         infowindow.setContent('<b>' + locations[n] + '</b>' 
-                        + '<br>' + names[n]
-                        + '<br> <br>' + 'Floors: ' + floors[n]
-                        + '<br>' + 'Batteries: ' + nb_batteries[n]
-                        + '<br>' + 'Columns: ' + nb_columns[n]
-                        + '<br>' + 'Elevators: ' + nb_elevators[n]
-                        + '<br>' + 'Technical Contact: ' + tech_names[n]);
-                        infowindow.open(map, marker);
-                    }
-                })(marker, i));
-                // console.log('Addresses After Geocode: ' + locations[i]);
-            } else {
-            alert("Geocode was not successful for the following reason: " + status);
-        }
-    });
 
-
-        
-
-        // geocoder.geocode({ address: locations[2] }, (results, status) => {
+        // geocoder.geocode({ address: String(locations[n]) }, (results, status) => {
     
-        //     // console.log('Addresses After Geocode: ' + locations[2]);
+        //     // console.log('Addresses After Geocode: ' + locations[n]);
             
         //     if (status === "OK") {
         //             maps.setCenter(results[0].geometry.location);
@@ -91,13 +59,13 @@
         //             });
         //             google.maps.event.addListener(marker, 'click', (function(marker, i) {
         //                 return function() {
-        //                     infowindow.setContent('<b>' + locations[2] + '</b>' 
-        //                     + '<br>' + names[2]
-        //                     + '<br> <br>' + 'Floors: ' + floors[2]
-        //                     + '<br>' + 'Batteries: ' + nb_batteries[2]
-        //                     + '<br>' + 'Columns: ' + nb_columns[2]
-        //                     + '<br>' + 'Elevators: ' + nb_elevators[2]
-        //                     + '<br>' + 'Technical Contact: ' + tech_names[2]);
+        //                     infowindow.setContent('<b>' + locations[n] + '</b>' 
+        //                     + '<br>' + names[n]
+        //                     + '<br> <br>' + 'Floors: ' + floors[n]
+        //                     + '<br>' + 'Batteries: ' + nb_batteries[n]
+        //                     + '<br>' + 'Columns: ' + nb_columns[n]
+        //                     + '<br>' + 'Elevators: ' + nb_elevators[n]
+        //                     + '<br>' + 'Technical Contact: ' + tech_names[n]);
         //                     infowindow.open(map, marker);
         //                 }
         //             })(marker, i));
@@ -106,6 +74,44 @@
         //         alert("Geocode was not successful for the following reason: " + status);
         //     }
         // });
+
+        
+        for (let i = 0; i < 10; i++){
+
+            geocoder.geocode({ address: locations[i] }, (results, status) => {
+        
+                // console.log('Addresses After Geocode: ' + locations[2]);
+                let lat = results[0].geometry.location.lat();
+                let lng = results[0].geometry.location.lng();
+                
+                if (status === "OK") {
+                        markerPost(results, lat, lng, i)
+                        // console.log('Addresses After Geocode: ' + locations[i]);
+                    } else {
+                    alert("Geocode was not successful for the following reason: " + status);
+                }
+            });
+        }
+
+        function markerPost(results, bruh, bruuh, nani){
+            maps.setCenter(results[0].geometry.location);
+                    marker = new google.maps.Marker({
+                        map: maps,
+                        position: new google.maps.LatLng(bruh, bruuh)
+                    });
+                    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                        return function() {
+                            infowindow.setContent('<b>' + locations[nani] + '</b>' 
+                            + '<br>' + names[nani]
+                            + '<br> <br>' + 'Floors: ' + floors[nani]
+                            + '<br>' + 'Batteries: ' + nb_batteries[nani]
+                            + '<br>' + 'Columns: ' + nb_columns[nani]
+                            + '<br>' + 'Elevators: ' + nb_elevators[nani]
+                            + '<br>' + 'Technical Contact: ' + tech_names[nani]);
+                            infowindow.open(map, marker);
+                        }
+                    })(marker, i));
+        }
     //--------------------- TESTING --------------------
 
     // for (i = 0; i < 10; i++) {
