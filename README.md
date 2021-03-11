@@ -1,7 +1,10 @@
 <img align="center" src="https://rocketelevators-yt.com/assets/RocketElevators_images/clear_logo.png"  alt="Logo" width="850" height="200">
 
 
-## Rocket Elevators Information System ##
+# Rocket Elevators Information System #
+
+<details>
+<summary>Click to Expand</summary>
 
 This week converted our static website into a Ruby on Rails application.
 
@@ -57,3 +60,13 @@ We can also group multiple Graphs at the same time using a Dashboard :
 In order to link the two databases together and to keep them up to date, we had to create tasks :
 
 ![](2021-02-26-17-55-30.png)
+
+</details>
+
+##Rocket Elevators APIs##
+
+
+The action of every agent <br />
+  into the world <br />
+starts <br />
+  from their physical selves. <br />
