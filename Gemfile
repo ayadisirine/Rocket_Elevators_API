@@ -130,3 +130,6 @@ gem 'rails_admin_rollincode', '~> 1.0'
 
 #Watson
 gem 'ibm_watson'
+
+# Geocoder
+gem 'geocoder'
