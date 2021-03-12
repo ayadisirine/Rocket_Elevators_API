@@ -24,7 +24,7 @@ class QuotesController < ApplicationController
       quotes.save!
       
       if quotes.save
-        # create_quote_ticket()
+        create_quote_ticket()
         redirect_to '/pages/quote'
       end
     end
@@ -38,11 +38,18 @@ class QuotesController < ApplicationController
       ZendeskAPI::Ticket.create!(client, 
           :subject => "#{params[:company_name]}", 
           :comment => { 
-              :value => "#{params[:company_name]} can be reached at email #{params[:email]}. 
-                  The chosen building type is #{params[:building_type]} with product line #{params[:product_line]}. 
-                  Number of suggested elevator is #{params[:elevator_amount]} and total price is #{params[:final_price]}. \n
-                  For More Information, refers to Quote ##{params[:id]}."
-          }, 
+            :value => "#{params[:company_name]} can be reached at email #{params[:email]}. 
+            Quote summary: \n 
+            - Building type: #{params[:building_type]}
+            - Appartments: #{params[:number_of_apartments]} 
+            - Floors: #{params[:number_of_floors]}
+            - Elevators:  #{params[:number_of_elevators]} 
+            - Basements: #{params[:number_of_basements]}
+            - Product Line: #{params[:product_line]} \n
+            Number of suggested elevator is #{params[:elevator_amount]}. The unit price is #{params[:elevator_unit_price]}, installation fees is #{params[:elevator_installation_fees]}.
+            Total price is #{params[:final_price]}. \n
+            For More Information, refers to Quote #{params[:id]}."
+            }, 
           :requester => { 
               "name": params[:company_name], 
               "email": params[:email]         
