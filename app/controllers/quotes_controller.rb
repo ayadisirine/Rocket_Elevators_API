@@ -24,7 +24,7 @@ class QuotesController < ApplicationController
       quotes.save!
       
       if quotes.save
-        create_quote_ticket()
+        # create_quote_ticket()
         redirect_to '/pages/quote'
       end
     end

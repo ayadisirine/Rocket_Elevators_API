@@ -26,7 +26,7 @@ class LeadsController < ApplicationController
         
 
         if leads.save
-            create_lead_ticket()
+            # create_lead_ticket()
             # sendgrid()
             if x == nil
                 redirect_to '/'
