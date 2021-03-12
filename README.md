@@ -115,7 +115,7 @@ This is the email that the customer receives when he/she completes the *Contact 
 
 </br>
 
-In order to have *Contact Form Attachment Files* sent to **Dropbox**, here is what we added:
+In order to have *Contact Form Attachment Files* sent to **Dropbox**,(Le login est cmoutlook17@gmail.com password: rocketelevators2021) here is what we added:
 
 ![](2021-03-11-13-15-36.png)
 
