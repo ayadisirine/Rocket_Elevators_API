@@ -8,7 +8,7 @@ class LeadsController < ApplicationController
         puts params
         x = params[:attachment]
 
-        leads = Lead.new
+        leads = Lead.new(leads_params)
         leads.name = params[:name]
         leads.company_name = params[:company_name]
         leads.email = params[:email]
@@ -24,8 +24,8 @@ class LeadsController < ApplicationController
 
         leads.save!
         
-
-        if leads.save
+        
+        if !verify_recaptcha(model: leads) && leads.save
             create_lead_ticket()
             sendgrid()
             if x == nil

@@ -133,3 +133,6 @@ gem 'ibm_watson'
 
 # Geocoder
 gem 'geocoder'
+
+# ReCaptcha
+gem 'recaptcha', require: 'recaptcha/rails'

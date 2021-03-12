@@ -313,6 +313,8 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    recaptcha (5.7.0)
+      json
     regexp_parser (2.1.1)
     remotipart (1.4.4)
     responders (3.0.1)
@@ -381,6 +383,8 @@ GEM
       nokogiri (>= 1.6, < 2.0)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2021.1)
+      tzinfo (>= 1.0.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
@@ -451,6 +455,7 @@ DEPENDENCIES
   rails (~> 5.2.4, >= 5.2.4.5)
   rails_admin (~> 2.0)
   rails_admin_rollincode (~> 1.0)
+  recaptcha
   rvm1-capistrano3
   sass-rails (~> 5.0)
   selenium-webdriver

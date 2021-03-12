@@ -23,6 +23,7 @@ class QuotesController < ApplicationController
       # quotes.assign_attributes(quotes_params)
       quotes.save!
       
+      
       if quotes.save
         create_quote_ticket()
         redirect_to '/pages/quote'
