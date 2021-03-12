@@ -119,6 +119,8 @@ In order to have *Contact Form Attachment Files* sent to **Dropbox**, here is wh
 
 ![](2021-03-11-13-15-36.png)
 
+</br>
+
 Next comes **IBM Watson Text-to-Speech**. We started by adding an audio player to *Rails Admin* in a new tab called Watson:
 
 ![](2021-03-11-13-26-19.png)
@@ -127,9 +129,21 @@ Then, we created a method that updates the audio file with Watson reading the te
 
 ![](2021-03-11-13-51-19.png)
 
-Finally, see what the audio player looks like:
+See what the audio player looks like:
 
 ![](2021-03-11-13-54-10.png)
+
+</br>
+
+Finally, we implemented **Google Maps** in the *Back Office*. This is the code:
+
+![](2021-03-12-11-08-22.png)
+
+![](2021-03-12-11-09-12.png)
+
+Here is what it looks like on the website:
+
+![](2021-03-12-11-11-36.png)
 
 
 
