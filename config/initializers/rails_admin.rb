@@ -20,6 +20,7 @@ RailsAdmin.config do |config|
       end
     end
   end 
+  
    config.authenticate_with do
      warden.authenticate! scope: :user
    end
