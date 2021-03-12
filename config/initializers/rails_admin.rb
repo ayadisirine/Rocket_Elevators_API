@@ -1,13 +1,19 @@
+require Rails.root.join('lib','rails_admin','map.rb')
+require Rails.root.join('lib', 'rails_admin', 'watson.rb')
 RailsAdmin.config do |config|
 
   ### Popular gems integration
 
   RailsAdmin.config do |config|
-   config.authenticate_with do
-     warden.authenticate! scope: :user
-   end
-   config.current_user_method(&:current_user)
+    config.main_app_name = ["Rocket Elevators"]
   end
+
+  config.authenticate_with do
+    warden.authenticate! scope: :user
+  end
+
+  config.current_user_method(&:current_user)
+  
   ## == CancanCan ==
   config.authorize_with :cancancan
 
@@ -38,10 +44,14 @@ RailsAdmin.config do |config|
     show
     edit
     delete
-    show_in_app
+    show_in_app 
+    map
+    watson
 
     ## With an audit adapter, you can add:
     # history_index
     # history_show
   end
 end
+
+

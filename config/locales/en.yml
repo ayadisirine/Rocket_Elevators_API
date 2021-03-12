@@ -29,6 +29,16 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 en:
+  admin:
+    actions:
+      map:
+        menu: "Map"
+        title: "Map"
+        breadcrumb: "Map"
+      watson:
+        menu: "Watson"
+        title: "Watson"
+        breadcrumb: "Watson"
   faker:
     name:
       battery_type:
