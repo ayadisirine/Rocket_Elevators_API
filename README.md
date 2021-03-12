@@ -145,6 +145,24 @@ Here is what it looks like on the website:
 
 ![](2021-03-12-11-11-36.png)
 
+## BONUS ##
+
+</br>
+
+We added a **Spotify Player** to the *Admin Page*:
+
+![](2021-03-12-17-25-18.png)
+![](2021-03-12-17-25-45.png)
+![](2021-03-12-17-26-46.png)
+
+</br>
+
+Next, we added a new **Watson** to provide intersting facts about *Star Wars*:
+
+![](2021-03-12-17-28-30.png)
+![](2021-03-12-17-29-23.png)
+![](2021-03-12-17-30-09.png)
+
 
 
 
