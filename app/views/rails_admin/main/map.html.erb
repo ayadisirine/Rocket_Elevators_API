@@ -16,6 +16,7 @@
     nb_columns = [];
     nb_elevators = [];
     tech_names = [];
+
     <% Building.all.each do |building| %>
         var f=0, x=0, y=0, z=0;
         locations.push(<%= raw(building.address_building.to_json) %>);
