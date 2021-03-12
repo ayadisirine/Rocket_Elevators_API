@@ -15,7 +15,7 @@ class Elevator < ApplicationRecord
         notify = self.status_changed?
         if notify
             notifier = Slack::Notifier.new ENV['SLACK_WEBHOOK_URL']
-            notifier.ping "The Elevator ID: #{self.id} with serial number: #{self.serial_number} changed status from : #{self.status_was} to #{self.status}"
+            notifier.ping "The Elevator #{self.id} with Serial Number: #{self.serial_number} changed status from : #{self.status_was} to #{self.status}"
         end
     end
 end
