@@ -39,7 +39,7 @@
     var infowindow = new google.maps.InfoWindow();
     var marker, i;
     let n = 0;
-    var selectLoc = locations.slice(10, 10);
+    
 
     console.log('First address Reference: ' + locations[0]);
     console.log(selectLoc)
@@ -94,7 +94,6 @@
         }
 
         function markerPost(results, bruh, bruuh, nani){
-            maps.setCenter(results[0].geometry.location);
                     marker = new google.maps.Marker({
                         map: maps,
                         position: new google.maps.LatLng(bruh, bruuh)
