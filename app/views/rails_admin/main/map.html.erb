@@ -51,7 +51,7 @@
             // console.log('Addresses After Geocode: ' + locations[2]);
             let lat = results[0].geometry.location.lat();
             let lng = results[0].geometry.location.lng();
-            let weather = <%=Openweather2.get_weather(lat: lat, lon: lng)%>
+            let weather = fetch('https://api.openweathermap.org/data/2.5/weather?lat='+lat+'lon='+lng+'&main.temp&mode=html&appid=<%=ENV['OPEN_WEATHER_APIKEY']%>')
                 
             if (status === "OK") {
                 markerPost(results, lat, lng, i, weather)
@@ -76,8 +76,8 @@
                 + '<br>' + 'Batteries: ' + nb_batteries[nani]
                 + '<br>' + 'Columns: ' + nb_columns[nani]
                 + '<br>' + 'Elevators: ' + nb_elevators[nani]
-                + '<br>' + 'Technical Contact: ' + tech_names[nani]);
-                + '<br>' + 'Weather: ' + weather;
+                + '<br>' + 'Technical Contact: ' + tech_names[nani]
+                + '<br>' + 'Weather: ' + weather);
 
                 infowindow.open(map, marker);
                 }
