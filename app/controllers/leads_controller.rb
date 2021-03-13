@@ -8,7 +8,7 @@ class LeadsController < ApplicationController
         puts params
         x = params[:attachment]
 
-        leads = Lead.new(leads_params)
+        leads = Lead.new
         leads.name = params[:name]
         leads.company_name = params[:company_name]
         leads.email = params[:email]
@@ -22,18 +22,23 @@ class LeadsController < ApplicationController
         $attachment = leads.attachment
         $company_name = leads.company_name
 
-        leads.save!
+        # leads.save!
         
         
         if !verify_recaptcha(model: leads) && leads.save
-            create_lead_ticket()
-            sendgrid()
-            if x == nil
-                redirect_to '/'
-            else
-                redirect_to '/dropbox/auth_callback'
+            respond_to do |format|
+                # create_lead_ticket()
+                # sendgrid()
+                if x == nil
+                    redirect_to '/'
+                else
+                    redirect_to '/dropbox/auth_callback'
+                end
             end
-        end
+        else
+          render 'new'
+        end  
+
     end
 
     def create_lead_ticket
