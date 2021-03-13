@@ -136,3 +136,5 @@ gem 'geocoder'
 
 #OpenWeather
 gem 'openweather2'
+# ReCaptcha
+gem 'recaptcha', require: 'recaptcha/rails'
