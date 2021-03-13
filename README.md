@@ -157,11 +157,23 @@ We added a **Spotify Player** to the *Admin Page*:
 
 </br>
 
-Next, we added a new **Watson** to provide intersting facts about *Star Wars*:
+Next, we added a new **Watson** to provide interesting facts about *Star Wars*:
 
 ![](2021-03-12-17-28-30.png)
 ![](2021-03-12-17-29-23.png)
 ![](2021-03-12-17-30-09.png)
+
+</br>
+
+Finally we tried to add **Weather** to *Google Maps* but this is as far as we got:
+
+![](2021-03-12-22-28-09.png)
+
+
+
+
+
+
 
 
 
