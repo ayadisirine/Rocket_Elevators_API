@@ -51,7 +51,7 @@
             // console.log('Addresses After Geocode: ' + locations[2]);
             let lat = results[0].geometry.location.lat();
             let lng = results[0].geometry.location.lng();
-            let weather = Openweather2.get_weather(lat: lat, lon: lng);
+            let weather = <%=Openweather2.get_weather(lat: lat, lon: lng)%>
                 
             if (status === "OK") {
                 markerPost(results, lat, lng, i, weather)
