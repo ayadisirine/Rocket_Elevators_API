@@ -27,8 +27,8 @@ class LeadsController < ApplicationController
         
         if !verify_recaptcha(model: leads) && leads.save
             respond_to do |format|
-                # create_lead_ticket()
-                # sendgrid()
+                create_lead_ticket()
+                sendgrid()
                 if x == nil
                     redirect_to '/'
                 else
