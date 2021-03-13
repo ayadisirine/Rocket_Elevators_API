@@ -25,19 +25,15 @@ class LeadsController < ApplicationController
         # leads.save!
         
         
-        if !verify_recaptcha(model: leads) && leads.save
-            respond_to do |format|
-                create_lead_ticket()
-                sendgrid()
-                if x == nil
-                    redirect_to '/'
-                else
-                    redirect_to '/dropbox/auth_callback'
-                end
+        if leads.save
+            create_lead_ticket()
+            sendgrid()
+            if x == nil
+                redirect_to '/'
+            else
+                redirect_to '/dropbox/auth_callback'
             end
-        else
-          render 'new'
-        end  
+        end
 
     end
 
