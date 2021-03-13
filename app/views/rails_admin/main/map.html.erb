@@ -76,6 +76,8 @@
                 + '<br>' + 'Columns: ' + nb_columns[nani]
                 + '<br>' + 'Elevators: ' + nb_elevators[nani]
                 + '<br>' + 'Technical Contact: ' + tech_names[nani]);
+                + '<br>' + 'Weather: ' + Openweather2.get_weather(lat: bruh, lon: bruuh);
+
                 infowindow.open(map, marker);
                 }
         })(marker, i));
