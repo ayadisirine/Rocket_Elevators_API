@@ -134,5 +134,7 @@ gem 'ibm_watson'
 # Geocoder
 gem 'geocoder'
 
+#OpenWeather
+gem 'openweather2'
 # ReCaptcha
 gem 'recaptcha', require: 'recaptcha/rails'
