@@ -43,6 +43,10 @@ en:
         menu: "Spotify"
         title: "Spotify"
         breadcrumb: "Spotify"  
+      starwars:
+        menu: "Star Wars "
+        title: "Star Wars Facts"
+        breadcrumb: "Star Wars" 
   faker:
     name:
       battery_type:

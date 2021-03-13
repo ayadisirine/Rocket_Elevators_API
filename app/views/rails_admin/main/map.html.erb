@@ -51,9 +51,9 @@
             // console.log('Addresses After Geocode: ' + locations[2]);
             let lat = results[0].geometry.location.lat();
             let lng = results[0].geometry.location.lng();
-                
+            let weather = fetch('https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lng+'&main.temp&units=metric&appid=<%=ENV['OPEN_WEATHER_APIKEY']%>').then(function(resp){return resp.json()})
             if (status === "OK") {
-                markerPost(results, lat, lng, i)
+                markerPost(results, lat, lng, i, weather)
                     // console.log('Addresses After Geocode: ' + locations[i]);
                 } else {
                     alert("Geocode was not successful for the following reason: " + status);
@@ -61,7 +61,7 @@
         });
     }
 
-    function markerPost(results, bruh, bruuh, nani){
+    function markerPost(results, bruh, bruuh, nani, weather){
         marker = new google.maps.Marker({
             map: maps,
             position: new google.maps.LatLng(bruh, bruuh)
@@ -75,7 +75,10 @@
                 + '<br>' + 'Batteries: ' + nb_batteries[nani]
                 + '<br>' + 'Columns: ' + nb_columns[nani]
                 + '<br>' + 'Elevators: ' + nb_elevators[nani]
-                + '<br>' + 'Technical Contact: ' + tech_names[nani]);
+                + '<br>' + 'Technical Contact: ' + tech_names[nani]
+                + '<br>' + 'Weather: ' + weather
+                );
+
                 infowindow.open(map, marker);
                 }
         })(marker, i));

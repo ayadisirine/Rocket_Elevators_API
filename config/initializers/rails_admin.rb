@@ -1,6 +1,7 @@
 require Rails.root.join('lib','rails_admin','map.rb')
 require Rails.root.join('lib', 'rails_admin', 'watson.rb')
 require Rails.root.join('lib', 'rails_admin', 'spotify.rb')
+require Rails.root.join('lib', 'rails_admin', 'starwars.rb')
 RailsAdmin.config do |config|
 
   ### Popular gems integration
@@ -49,6 +50,7 @@ RailsAdmin.config do |config|
     map
     watson
     spotify
+    starwars
 
     ## With an audit adapter, you can add:
     # history_index

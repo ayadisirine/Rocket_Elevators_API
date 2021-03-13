@@ -115,7 +115,7 @@ This is the email that the customer receives when he/she completes the *Contact 
 
 </br>
 
-In order to have *Contact Form Attachment Files* sent to **Dropbox**, here is what we added:
+In order to have *Contact Form Attachment Files* sent to **Dropbox**,(Le login est cmoutlook17@gmail.com password: rocketelevators2021) here is what we added:
 
 ![](2021-03-11-13-15-36.png)
 
@@ -144,6 +144,36 @@ Finally, we implemented **Google Maps** in the *Back Office*. This is the code:
 Here is what it looks like on the website:
 
 ![](2021-03-12-11-11-36.png)
+
+## BONUS ##
+
+</br>
+
+We added a **Spotify Player** to the *Admin Page*:
+
+![](2021-03-12-17-25-18.png)
+![](2021-03-12-17-25-45.png)
+![](2021-03-12-17-26-46.png)
+
+</br>
+
+Next, we added a new **Watson** to provide interesting facts about *Star Wars*:
+
+![](2021-03-12-17-28-30.png)
+![](2021-03-12-17-29-23.png)
+![](2021-03-12-17-30-09.png)
+
+</br>
+
+Finally we tried to add **Weather** to *Google Maps* but this is as far as we got:
+
+![](2021-03-12-22-28-09.png)
+
+
+
+
+
+
 
 
 

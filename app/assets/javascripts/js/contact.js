@@ -2,6 +2,10 @@
 *************************************************** **/
 
 $(document).ready(function() {
+	$('.g-recaptcha').attr("data-callback", "recaptcha");
+	function recaptcha() {
+		$("#message-button").removeAttr("disabled");
+	}
 	$("#message-button").on("click", function(){
 		var $name = $("#name").val();
 		console.log($name);

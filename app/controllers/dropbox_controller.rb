@@ -27,6 +27,6 @@ class DropboxController < ApplicationController
             ActiveRecord::Base.connection.exec_query("UPDATE leads SET attachment = NULL WHERE company_name = '#{company_name}'")
         end
 
-        redirect_to '/#contact'
+        redirect_to '/'
     end
 end

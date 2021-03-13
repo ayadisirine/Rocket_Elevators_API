@@ -22,9 +22,9 @@ class LeadsController < ApplicationController
         $attachment = leads.attachment
         $company_name = leads.company_name
 
-        leads.save!
+        # leads.save!
         
-
+        
         if leads.save
             create_lead_ticket()
             sendgrid()
@@ -34,6 +34,7 @@ class LeadsController < ApplicationController
                 redirect_to '/dropbox/auth_callback'
             end
         end
+
     end
 
     def create_lead_ticket
