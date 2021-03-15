@@ -8,9 +8,9 @@ class CreateFactIntervention < ActiveRecord::Migration[5.2]
       t.integer :elevator_id
       t.datetime :start_of_intervention, default: -> { "CURRENT_TIMESTAMP" }, null: false
       t.datetime :end_of_intervention
-      t.string :result
+      t.string :result, null: false
       t.string :report
-      t.string :status
+      t.string :status, null: false
     end
   end
 end
