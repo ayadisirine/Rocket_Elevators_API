@@ -52,11 +52,11 @@ ActiveRecord::Schema.define(version: 2021_03_15_155919) do
     t.integer "battery_id"
     t.integer "column_id"
     t.integer "elevator_id"
-    t.datetime "start_of_intervention", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.datetime "start_of_intervention", null: false
     t.datetime "end_of_intervention"
-    t.string "result"
+    t.string "result", null: false
     t.string "report"
-    t.string "status"
+    t.string "status", null: false
   end
 
   create_table "fact_quotes", force: :cascade do |t|
