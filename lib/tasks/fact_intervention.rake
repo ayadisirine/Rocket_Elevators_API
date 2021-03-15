@@ -28,12 +28,12 @@ namespace :intervention do
                     if random_result.downcase == "success"
                         
                         random_status = "Complete"
-                        random_report = "The Battery functionnal and ready to operate"
+                        random_report = "The Battery is functionnal and ready to operate"
 
                     elsif random_result.downcase == "failure"
                         
                         random_status = "Interrupted"
-                        random_report = "That shit BROKE"
+                        random_report = "BRUH That shit BROKE"
 
                     else
 
@@ -53,12 +53,12 @@ namespace :intervention do
                         if random_result.downcase == "success"
                         
                             random_status = "Complete"
-                            random_report = "The Column functionnal and ready to operate"
+                            random_report = "The Column is functionnal and ready to operate"
 
                         elsif random_result.downcase == "failure"
                         
                             random_status = "Interrupted"
-                            random_report = "That shit BROKE"
+                            random_report = "BRUH That Shit BROKE"
 
                         else
 
@@ -77,12 +77,12 @@ namespace :intervention do
                             if random_result.downcase == "success"
                         
                                 random_status = "Complete"
-                                random_report = "The Elevator functionnal and ready to operate"
+                                random_report = "The Elevator is functionnal and ready to operate"
 
                             elsif random_result.downcase == "failure"
                         
                                 random_status = "Interrupted"
-                                random_report = "That shit BROKE"
+                                random_report = "BRUH That shit BROKE"
 
                             else
 
