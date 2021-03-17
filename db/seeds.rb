@@ -336,3 +336,13 @@ end
         "contact_request_date" => Faker::Time.between(from: '2017-02-23 12:30:59', to: DateTime.now)
     }])
 end
+
+Faker::UniqueGenerator.clear
+100.times do
+    BuildingDetail.create!([{
+        "information_key" => { 
+            "Contractor Name" => Faker::Name.unique.name
+        },
+        "building_id" => Faker::Number.unique.between(from: 1, to:100)
+    }])
+end
