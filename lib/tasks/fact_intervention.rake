@@ -3,7 +3,7 @@ namespace :intervention do
 
     desc "Sync Fact Intervention"
     task sync: :environment  do |t, args|
-        dwh = PG::Connection.new(host:'localhost', port:'5432', dbname:'rocketelevators_dwh', user:'postgres', password:'postgres')
+        dwh = PG::Connection.new(host:'codeboxx-postgresql.cq6zrczewpu2.us-east-1.rds.amazonaws.com', port:'5432', dbname:'rocketelevators_dwh_team_sirine', user:'codeboxx', password:'Codeboxx1!')
         # puts dwh
         result = ["Success", "Failure", "Incomplete"]
         status = ["Pending", "In progress", "Interrupted", "Resumed", "Complete"]
