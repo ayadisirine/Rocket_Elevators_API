@@ -80,6 +80,9 @@ In order to link the two databases together and to keep them up to date, we had 
 
 # Rocket Elevators APIs #
 
+<details>
+<summary><i>CLICK TO EXPAND</i></summary>
+
 **Use these credentials to access the back office:**
 
 - Username: nicolas.genest@codeboxx.biz
@@ -168,7 +171,20 @@ Next, we added a new **Watson** to provide interesting facts about *Star Wars*:
 Finally we tried to add **Weather** to *Google Maps* but this is as far as we got:
 
 ![](2021-03-12-22-28-09.png)
+</details>
 
+
+# Extented Data Warehouse #
+
+<u><b>This week we had to extend our data warehouse with a table named Fact Intervention:</u></b>
+
+![](fact_int.jpg)
+
+</br>
+
+Then we developed a rake task to generate random data into that table.
+
+![](fact_int2.jpg)
 
 
 
